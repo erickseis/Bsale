@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const connection = require('../connection');
 
-router.get('/product', (req, res) => {
+router.get('/api/v1/product', (req, res) => {
     connection.query('SELECT * from product', (err, rows, fields) => {
         if (!err) {
             res.send(rows);

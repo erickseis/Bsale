@@ -2,7 +2,7 @@ const { Router } = require('express');
 const router = Router();
 const connection = require('../connection');
 
-router.get('/category', (req, res) => {
+router.get('/api/v1/category', (req, res) => {
     connection.query('SELECT * from category', (err, rows, fields) => {
         if (!err) {
             res.send(rows);
