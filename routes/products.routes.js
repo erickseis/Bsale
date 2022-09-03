@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const connection = require('../connection');
+// const controller = {}
 
 
 router.get('/', (req, res) => {
@@ -8,7 +9,6 @@ router.get('/', (req, res) => {
     connection.query('SELECT * FROM product', (err, rows, fields) => {
         if (!err) {
             res.json(rows)
-            // res.send(rows);
         } else {
             console.log(err);
         }
@@ -16,20 +16,23 @@ router.get('/', (req, res) => {
 });
 
 
-
-
 router.get('/:id', (req, res) => {
+    console.log(req.body)
     const { id } = req.params;
-    console.log(id)
-    connection.query('SELECT * FROM product WHERE id = ?', [id], (err, rows, fields) => {
+    connection.query(`SELECT * FROM product WHERE category = ?`, [id], (err, rows, fields) => {
         if (!err) {
             res.json(rows)
-            // res.send(rows);
         } else {
             console.log(err);
         }
 
     })
 })
+
+
+
+
+
+
 
 module.exports = router;

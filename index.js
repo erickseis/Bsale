@@ -15,15 +15,11 @@ app.set('json spaces', 2);
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
-
-
-// //*routes
-// app.use(require('./routes/products.routes'));
-// app.use(require('./routes/category.routes'));
+app.use(express.urlencoded({ extended: false })) // desde express podemos entender lo q venga del input
 
 
 
-//function 
+//*function routes
 routerApi(app);
 
 
