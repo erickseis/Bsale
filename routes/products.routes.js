@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/:id', (req, res) => {
+router.get('/id/:id', (req, res) => {
     console.log(req.body)
     const { id } = req.params;
     connection.query(`SELECT * FROM product WHERE category = ?`, [id], (err, rows, fields) => {
@@ -27,12 +27,12 @@ router.get('/:id', (req, res) => {
 
     })
 })
-router.get('/name/:name', (req, res) => {
+router.get('/:name', (req, res) => {
     console.log(req.body)
     const { name } = req.params;
-    connection.query(`SELECT * FROM product WHERE name LIKE ?`, [`%${name}%`], (err, rows, fields) => {
+    connection.query(`SELECT * FROM product WHERE name LIKE ?`, [`%${name}%`], (err, data, fields) => {
         if (!err) {
-            res.json(rows)
+            res.json(data)
         } else {
             console.log(err);
         }
