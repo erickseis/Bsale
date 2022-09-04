@@ -1,7 +1,6 @@
-const { Router } = require('express');
+const { Router, res } = require('express');
 const router = Router();
 const connection = require('../connection');
-// const controller = {}
 
 
 router.get('/', (req, res) => {
@@ -15,11 +14,10 @@ router.get('/', (req, res) => {
     });
 });
 
-
-router.get('/:id', (req, res) => {
+router.get('/:name', (req, res) => {
     console.log(req.body)
-    const { id } = req.params;
-    connection.query(`SELECT * FROM product WHERE category = ?`, [id], (err, rows, fields) => {
+    const { name } = req.params;
+    connection.query(`SELECT * FROM product WHERE name LIKE ?`, [`%${name}%`], (err, rows, fields) => {
         if (!err) {
             res.json(rows)
         } else {
@@ -28,11 +26,5 @@ router.get('/:id', (req, res) => {
 
     })
 })
-
-
-
-
-
-
 
 module.exports = router;
