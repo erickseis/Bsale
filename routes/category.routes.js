@@ -5,9 +5,9 @@ const connection = require('../connection');
 
 router.get('/', (req, res) => {
     console.log(req)
-    connection.query('SELECT * from category', (err, data, fields) => {
+    connection.query('SELECT * from category', (err, rows, fields) => {
         if (!err) {
-            res.send(data);
+            res.send(rows);
         } else {
             console.log(err);
         }
@@ -19,10 +19,10 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     //
-    connection.query('SELECT * FROM category WHERE id = ?', [id], (err, data, fields) => {
+    connection.query('SELECT * FROM category WHERE id = ?', [id], (err, rows, fields) => {
         if (!err) {
-            res.json(data)
-            // res.send(rows);
+            // res.json(rows)
+            res.send(rows);
         } else {
             console.log(err);
         }

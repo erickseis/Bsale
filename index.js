@@ -15,6 +15,16 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: false })) // desde express podemos entender lo q venga del input
+// function error404(req, res, next) {
+//     let error = new Error(),
+//         locals = {
+//             tittle: 'Error 404',
+//             desciption: 'Recurso no encontrado',
+//             error: error
+//         }
+//     error.status = 404
+//     res.render('error', locals)
+// }
 
 //*function routes
 routerApi(app);
