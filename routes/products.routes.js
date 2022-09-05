@@ -4,7 +4,7 @@ const connection = require('../connection');
 
 
 router.get('/undefined', (req, res) => {
-
+    console.log(req.body)
     connection.query('SELECT * FROM product', (err, rows, fields) => {
         if (!err) {
             res.json(rows)
