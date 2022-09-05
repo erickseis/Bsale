@@ -12,6 +12,17 @@ router.get('/', (req, res) => {
         }
     });
 });
+router.get('/0', (req, res) => {
+    console.log(req.body)
+    connection.query('SELECT * FROM product', (err, rows, fields) => {
+        if (!err) {
+            res.json(rows)
+        } else {
+            console.log(err);
+        }
+    });
+});
+
 
 router.get('/name', (req, res) => {
     console.log(req.body)
