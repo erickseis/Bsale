@@ -3,7 +3,7 @@ const router = Router();
 const connection = require('../connection');
 
 
-router.get('/', (req, res) => {
+router.get('/undefined', (req, res) => {
 
     connection.query('SELECT * FROM product', (err, rows, fields) => {
         if (!err) {
