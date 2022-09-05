@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/undefined', (req, res) => {
+router.get('/name/undefined', (req, res) => {
     console.log(req.body)
     connection.query('SELECT * FROM product', (err, rows, fields) => {
         if (!err) {
@@ -49,14 +49,5 @@ router.get('/name/:name', (req, res) => {
 
     })
 })
-
-
-connection.connect(function (err) {
-    if (err) throw err;
-    connection.query("SELECT * FROM category ORDER BY name DESC", function (err, result) {
-        if (err) throw err;
-        console.log(result);
-    });
-});
 
 module.exports = router;
