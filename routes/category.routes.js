@@ -3,6 +3,7 @@ const router = Router();
 const connection = require('../connection');
 
 router.get('/', (req, res) => {
+    console.log(req)
     connection.query('SELECT * from category', (err, rows, fields) => {
         if (!err) {
             res.send(rows);
