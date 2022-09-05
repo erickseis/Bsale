@@ -1,7 +1,7 @@
 const { Router, res } = require('express');
 const router = Router();
 const connection = require('../connection');
-
+//Products Routes
 router.get('/', (req, res) => {
     console.log(req.body)
     connection.query('SELECT * FROM product', (err, rows, fields) => {

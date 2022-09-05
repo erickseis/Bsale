@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 const connection = require('../connection');
+//Categories Routes
 
 router.get('/', (req, res) => {
     console.log(req)
