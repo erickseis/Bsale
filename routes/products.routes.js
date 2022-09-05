@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/name/undefined', (req, res) => {
+router.get('/undefined', (req, res) => {
     console.log(req.body)
     connection.query('SELECT * FROM product', (err, rows, fields) => {
         if (!err) {
