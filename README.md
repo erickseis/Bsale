@@ -15,6 +15,7 @@
 ![](https://i.postimg.cc/MTjzTwHs/Captura.png)
 
 #Introduccion
+
 La Bsale Store Api, tiene como principio el permitir la interaccion entre el cliente y nuestra base de datos para que se puedan realizar compras de nuestros productos a traves de nuestro buscador o uso de categorias.
 
 ##Uso de la Bsale Store Api
