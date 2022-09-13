@@ -5,6 +5,7 @@ const app = express();
 const routerApi = require('./routes/index')
 
 //*settings
+//aplica
 app.set('port', process.env.PORT || 3000);
 app.set('json spaces', 2);
 
