@@ -56,7 +56,7 @@ Asi es como puedes ocupar nuestra Bsale Store Api, te dejo unos ejemplos para qu
 
 **GET Products / : name**
 
-![](https://i.postimg.cc/XVKTq7f5/name.png)
+![](https://i.postimg.cc/fDQNCF8B/name.png)
 
 De esta manera podemos sacar provecho de la Bsale Store Api.
 
