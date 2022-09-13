@@ -1,4 +1,8 @@
+//import of data base
 const mysql = require('mysql');
+
+
+//define conecction of data base
 const connection = mysql.createPool({
     host: 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com',
     database: 'bsale_test',
@@ -7,5 +11,5 @@ const connection = mysql.createPool({
 });
 
 
-
+//export of connection
 module.exports = connection;
